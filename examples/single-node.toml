@@ -1,0 +1,26 @@
+[broker]
+mode = "dev-in-memory"
+
+[storage]
+backend = "noop"
+data_dir = "./data"
+
+[listeners.native]
+enabled = true
+bind = "127.0.0.1:7777"
+
+[listeners.amqp]
+enabled = true
+bind = "127.0.0.1:5672"
+
+[[exchanges]]
+name = "amq.direct"
+kind = "direct"
+
+[[queues]]
+name = "test.queue"
+
+[[bindings]]
+exchange = "amq.direct"
+queue = "test.queue"
+routing_key = "test"

@@ -1,0 +1,115 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/aurum-types",
+    "crates/aurum-kernels",
+    "crates/aurum-intrusive",
+    "crates/aurum-core",
+    "crates/aurum-routing",
+    "crates/aurum-plugin-api",
+    "crates/aurum-internal-protocol",
+    "crates/aurum-protocol-native",
+    "crates/aurum-protocol-amqp",
+    "crates/aurum-concurrency",
+    "crates/aurum-storage",
+    "crates/aurum-runtime",
+    "crates/aurum-broker",
+    "crates/aurum-transport",
+    "crates/aurum-cli",
+    "experiments/h1-queue-engine",
+    "experiments/h2-consumer-session",
+    "experiments/h3-command-protocol",
+    "experiments/h4-in-memory-broker",
+    "experiments/h5-routing",
+    "experiments/h6-native-protocol",
+    "experiments/h7-storage-engine",
+    "experiments/h8-amqp-adapter",
+    "experiments/h10-single-node-server",
+]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+license = "Apache-2.0 OR MIT"
+authors = ["AurumMQ contributors"]
+rust-version = "1.96"
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+missing_debug_implementations = "warn"
+
+[workspace.lints.clippy]
+all = "warn"
+pedantic = "allow"
+
+[profile.dev]
+debug = 1
+incremental = true
+
+[profile.release]
+opt-level = 3
+debug = true
+lto = "thin"
+codegen-units = 16
+panic = "abort"
+incremental = false
+
+[profile.bench]
+inherits = "release"
+
+[workspace.dependencies]
+aurum-types = { path = "crates/aurum-types" }
+bitflags = "2"
+aurum-kernels = { path = "crates/aurum-kernels" }
+aurum-intrusive = { path = "crates/aurum-intrusive" }
+aurum-core = { path = "crates/aurum-core" }
+aurum-routing = { path = "crates/aurum-routing" }
+aurum-internal-protocol = { path = "crates/aurum-internal-protocol" }
+aurum-plugin-api = { path = "crates/aurum-plugin-api" }
+aurum-protocol-native = { path = "crates/aurum-protocol-native" }
+aurum-protocol-amqp = { path = "crates/aurum-protocol-amqp" }
+aurum-concurrency = { path = "crates/aurum-concurrency" }
+aurum-storage = { path = "crates/aurum-storage" }
+tempfile = "3.25.0"
+aurum-runtime = { path = "crates/aurum-runtime" }
+aurum-broker = { path = "crates/aurum-broker" }
+aurum-transport = { path = "crates/aurum-transport" }
+toml = "0.8.23"
+
+# Testing / benchmarks
+criterion = "0.8.2"
+proptest = "1.11.0"
+arbitrary = { version = "1.4.2", features = ["derive"] }
+loom = "0.7.2"
+
+# Low-level utilities
+smallvec = "1.15.2"
+arrayvec = "0.7.7"
+bytes = "1.12.0"
+slab = "0.4.12"
+slotmap = "1.1.1"
+arc-swap = "1.9.1"
+
+# Concurrency baselines / cold path
+crossbeam = "0.8.4"
+crossbeam-channel = "0.5.15"
+crossbeam-queue = "0.3.12"
+crossbeam-epoch = "0.9.18"
+
+# Hashing / maps
+hashbrown = "0.17.1"
+
+# IO / storage
+io-uring = "0.7.12"
+mio = "1.2.1"
+
+# Checksums / compression
+crc32c = "0.6.8"
+lz4_flex = "0.13.1"
+zstd = "0.13.3"
+
+# Observability
+tracing = "0.1.44"
+tracing-subscriber = "0.3.23"
+prometheus-client = "0.25"
+hdrhistogram = "7.5.4"

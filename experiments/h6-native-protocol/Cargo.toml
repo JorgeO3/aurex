@@ -1,0 +1,22 @@
+[package]
+name = "h6-native-protocol"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+name = "h6-native-protocol"
+path = "src/main.rs"
+
+[dependencies]
+aurum-broker.workspace = true
+aurum-protocol-native.workspace = true
+aurum-routing.workspace = true
+aurum-types.workspace = true
+bytes.workspace = true
+
+[lints]
+workspace = true

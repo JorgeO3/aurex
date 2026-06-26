@@ -1,0 +1,20 @@
+[package]
+name = "h7-storage-engine"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+name = "h7-storage-engine"
+path = "src/main.rs"
+
+[dependencies]
+aurum-storage.workspace = true
+aurum-types.workspace = true
+tempfile.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,20 @@
+[package]
+name = "h5-routing"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+name = "h5-routing"
+path = "src/main.rs"
+
+[dependencies]
+aurum-broker.workspace = true
+aurum-routing.workspace = true
+aurum-types.workspace = true
+
+[lints]
+workspace = true

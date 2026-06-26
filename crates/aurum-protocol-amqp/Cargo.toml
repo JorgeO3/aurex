@@ -1,0 +1,21 @@
+[package]
+name = "aurum-protocol-amqp"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+aurum-types.workspace = true
+aurum-internal-protocol.workspace = true
+aurum-plugin-api.workspace = true
+bitflags.workspace = true
+bytes.workspace = true
+smallvec.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

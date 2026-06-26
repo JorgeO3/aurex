@@ -1,0 +1,18 @@
+[package]
+name = "h1-queue-engine"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+aurum-core.workspace = true
+aurum-types.workspace = true
+
+[[bin]]
+name = "h1-queue-engine"
+path = "src/main.rs"
+
+[lints]
+workspace = true

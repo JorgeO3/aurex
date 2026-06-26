@@ -1,0 +1,11 @@
+[build]
+target-dir = "target"
+
+# Keep this portable by default. For local performance work, prefer:
+#   RUSTFLAGS="-C target-cpu=native" cargo build --release
+# or CPU-specific experiment crates/features later.
+
+[alias]
+check-all = "check --workspace --all-targets"
+build-all = "build --workspace --release"
+h1 = "run --release -p h1-queue-engine --"

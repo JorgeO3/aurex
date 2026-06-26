@@ -1,0 +1,13 @@
+[package]
+name = "aurum-runtime"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+aurum-types.workspace = true
+
+[lints]
+workspace = true

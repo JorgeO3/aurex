@@ -1,0 +1,28 @@
+[package]
+name = "aurum-core"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[features]
+model = []
+
+[dependencies]
+aurum-types.workspace = true
+aurum-kernels.workspace = true
+aurum-intrusive.workspace = true
+bitflags.workspace = true
+smallvec = { workspace = true, features = ["union"] }
+
+[lints]
+workspace = true
+
+[[test]]
+name = "queue_model_diff"
+required-features = ["model"]
+
+[[test]]
+name = "consumer_model_diff"
+required-features = ["model"]

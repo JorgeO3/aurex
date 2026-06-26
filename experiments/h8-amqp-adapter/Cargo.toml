@@ -1,0 +1,15 @@
+[package]
+name = "h8-amqp-adapter"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+aurum-broker.workspace = true
+aurum-protocol-amqp.workspace = true
+bytes.workspace = true
+
+[lints]
+workspace = true

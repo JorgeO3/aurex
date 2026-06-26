@@ -1,0 +1,29 @@
+[package]
+name = "aurum-broker"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+aurum-types.workspace = true
+aurum-core.workspace = true
+aurum-internal-protocol.workspace = true
+aurum-routing.workspace = true
+aurum-plugin-api.workspace = true
+aurum-protocol-native.workspace = true
+aurum-protocol-amqp.workspace = true
+aurum-runtime.workspace = true
+aurum-storage.workspace = true
+aurum-transport.workspace = true
+toml.workspace = true
+bitflags.workspace = true
+bytes.workspace = true
+smallvec = { workspace = true, features = ["union"] }
+
+[dev-dependencies]
+tempfile = "3.25.0"
+
+[lints]
+workspace = true

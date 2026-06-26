@@ -1,0 +1,23 @@
+[package]
+name = "h10-single-node-server"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+aurum-broker.workspace = true
+aurum-protocol-native.workspace = true
+aurum-protocol-amqp.workspace = true
+aurum-transport.workspace = true
+bytes.workspace = true
+tempfile.workspace = true
+
+[[bin]]
+name = "h10-single-node-server"
+path = "src/main.rs"
+
+[lints]
+workspace = true

@@ -1,0 +1,20 @@
+[package]
+name = "h4-in-memory-broker"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+name = "h4-in-memory-broker"
+path = "src/main.rs"
+
+[dependencies]
+aurum-broker.workspace = true
+aurum-internal-protocol.workspace = true
+aurum-types.workspace = true
+
+[lints]
+workspace = true
